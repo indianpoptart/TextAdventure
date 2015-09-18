@@ -1,6 +1,5 @@
 package com.nikhilparanjape.textadventure;
 
-import java.lang.reflect.Array;
 import java.util.Scanner;
 
 /**
@@ -19,9 +18,24 @@ public class main {
 	static int[] abilities = new int[100];
 	public static void main(String[] args) {
 		
+		System.out.println("A: Start New Game");
+		System.out.println("B: Load Game File");
+		System.out.println("C: Quit");
+		String game = scan.nextLine();
+		if(game.equalsIgnoreCase("A") || game.equalsIgnoreCase("1")){
+			startGame();
+		}
+		else if(game.equalsIgnoreCase("B") || game.equalsIgnoreCase("2")){
+			inventory[] = IO.openFile("inventory");
+		}
+	}
+	public static void startGame(){
 		System.out.println("You wake up in a forest with nothing. In front of you, there is a tree.");
 		System.out.println("Behind you there is a wooden structure.");
 		next1();
+	}
+	public static void inventory(){
+		
 	}
 	public static void next1(){
 		System.out.println("What do you want to do?");
@@ -51,6 +65,7 @@ public class main {
 			inventoryValues[0] = 25;
 			
 			System.out.println("You now have " + inventoryValues[0] + " " + inventory[0]);
+			step3(1);
 		}
 		else if(choice1==2){
 			//Structure
@@ -64,6 +79,18 @@ public class main {
 				jLevel = 0;
 			}
 			System.out.println("Your jumping ability increased by 10. Your current jumping skill is at Level " + jLevel);
+			step3(2);
+		}
+		else{
+			
+		}
+	}
+	public static void step3(int choice2){
+		if(choice2==1){
+			System.out.println("It starts to get dark, the forest is dark and eerie. \n In front of you, there is a small stone hatchet \n To the left of you, there is a ");
+		}
+		else if(choice2==2){
+			System.out.println("");
 		}
 	}
 
