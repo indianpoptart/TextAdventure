@@ -2,6 +2,9 @@ package com.nikhilparanjape.textadventure;
 
 import java.util.Scanner;
 
+import com.nikhilparanjape.textadventure.levels.one;
+import com.nikhilparanjape.textadventure.levels.two;
+
 /**
  * A simple text adventure
  * 
@@ -31,6 +34,26 @@ public class main {
 		}
 		else if(game.equalsIgnoreCase("C") || game.equalsIgnoreCase("3")){
 			System.exit(0);
+		}
+		else if(game.equalsIgnoreCase("lvl-slct1121")){
+			//Cheat Code for level select
+			//clear;
+			System.out.println("Choose the level you want to go to.");
+			String lvlselect = scan.nextLine();
+			if(lvlselect.equalsIgnoreCase("1") || lvlselect.equalsIgnoreCase("one")){
+				one.prompt();
+			}
+			else if(lvlselect.equalsIgnoreCase("2") || lvlselect.equalsIgnoreCase("two")){
+				
+			}
+			else if(lvlselect.equalsIgnoreCase("3") || lvlselect.equalsIgnoreCase("three")){
+				
+			}
+		}
+		else{
+			System.out.println("That is not an option, try again.");
+			String again = scan.nextLine();
+			startMenu(again);
 		}
 	}
 	
